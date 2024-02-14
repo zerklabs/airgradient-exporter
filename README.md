@@ -22,9 +22,7 @@ The following steps will guide you through the process of preparing your compute
 7. The device should now be configured send data to the exporter
 
 # Running the Exporter
-The exporter will also serve configuration data back to the device. This cannot currently be disabled but will be in the future.
-
-The relevant device configuration options are included as well.
+The exporter will also serve configuration data back to the device. This cannot currently be disabled but will be configurable in the future. See the all of the AG prefixed options under [Exporter Configuration](#exporter-configuration) for more information.
 
 ## Linux
 1. [Download the latest release for your platform](https://github.com/zerklabs/airgradient-exporter/releases)
@@ -49,7 +47,7 @@ The exporter can be configured using command line flags or environment variables
 | LED Bar Test Requested    | Whether the LED bar test is requested                                                                                         | false    | true, false                            | `--ag-led-bar-test-requested`    | `AIRGRADIENT_EXPORTER_AG_LED_BAR_TEST_REQUESTED`    |
 | LED Bar Mode              | The LED bar mode. If set to something other than `off` then the LED bar will represent the level of the measurement specified | off      | off, pm, co2                           | `--ag-led-bar-mode`              | `AIRGRADIENT_EXPORTER_AG_LED_BAR_MODE`              |
 | Model                     | The model of the device                                                                                                       | not set  |                                        | `--ag-model`                     | `AIRGRADIENT_EXPORTER_AG_MODEL`                     |
-| MQTT Broker URL           | The URL of the MQTT broker                                                                                                    | not set  |                                        | `--ag-mqtt-broker-url`           | `AIRGRADIENT_EXPORTER_MQTT_BROKER_URL`              |
+| MQTT Broker URL           | The URL of the MQTT broker                                                                                                    | not set  |                                        | `--ag-mqtt-broker-url`           | `AIRGRADIENT_EXPORTER_AG_MQTT_BROKER_URL`           |
 
 # Inspiration
 - [AirGradient](https://airgradient.com/)
