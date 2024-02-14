@@ -27,7 +27,7 @@ The exporter will also serve configuration data back to the device. This cannot 
 The relevant device configuration options are included as well.
 
 ## Linux
-1. [Download the latest release for your platform](bin/)
+1. [Download the latest release for your platform](https://github.com/zerklabs/airgradient-exporter/releases)
 2. If on Debian, copy dist/debian/airgradient-exporter.service to /etc/systemd/system/airgradient-exporter.service
 3. Run `sudo systemctl enable airgradient-exporter.service`
 4. Copy the relevant binary to the system (/bin/airgradient-exporter)
