@@ -18,7 +18,17 @@ The following steps will guide you through the process of preparing your compute
 4. Find and replace `YOUR_PORT` with the port the exporter will listen on (Default: 10000)
 5. Select the correct board and port
 6. Upload the sketch to the device
-7. The device should now send data to the exporter
+7. The device should now be configured send data to the exporter
+
+# Running the Exporter
+
+## Linux
+1. [Download the latest release]()
+2. If on Debian, copy dist/debian/airgradient-exporter.service to /etc/systemd/system/airgradient-exporter.service
+3. Run `sudo systemctl enable airgradient-exporter.service`
+4. Copy the relevant binary to the system (/bin/airgradient-exporter)
+5. Run `sudo systemctl start airgradient-exporter.service`
+6. Check the metrics endpoint by opening a web browser and going to `http://YOUR_IP:YOUR_PORT/metrics`
 
 # Exporter Configuration
 | Name                      | Description                                                                                                                   | Default  | Options                                | CLI Flag                         | Environment Variable                                |

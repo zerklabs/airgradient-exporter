@@ -1,0 +1,14 @@
+131c131
+< String APIROOT = "http://hw.airgradient.com/";
+---
+> String APIROOT = "http://YOUR_IP:YOUR_PORT";
+470c470
+<                    "sensors/airgradient:" + String(getNormalizedMac()) +
+---
+>                    "/sensors/airgradient:" + String(getNormalizedMac()) +
+783c783
+<   String getUrl = "http://hw.airgradient.com/sensors/airgradient:" +
+---
+>   String getUrl = APIROOT + "/sensors/airgradient:" +
+1213d1212
+< 

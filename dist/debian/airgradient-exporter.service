@@ -1,0 +1,36 @@
+[Unit]
+Description=AirGradient Exporter
+Documentation=https://github.com/zerklabs/airgradient-exporter
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+; User and group the process will run as.
+User=nobody
+Group=nogroup
+
+EnvironmentFile=-/etc/default/airgradient-exporter
+ExecStart=/bin/airgradient-exporter
+ExecReload=/bin/kill -USR1 $MAINPID
+
+; Limit the number of file descriptors; see `man systemd.exec` for more limit settings.
+LimitNOFILE=1043576
+LimitNPROC=1043576
+
+StandardError=journal
+StandardOutput=journal
+SyslogLevel=alert
+SyslogFacility=local2
+SyslogIdentifier=airgradient-exporter
+
+; Use private /tmp and /var/tmp, which are discarded after the service stops.
+PrivateTmp=true
+; Use a minimal /dev
+PrivateDevices=true
+; Hide /home, /root, and /run/user. Nobody will steal your SSH-keys.
+ProtectHome=false
+; Make /usr, /boot, /etc and possibly some more folders read-only.
+ProtectSystem=full
+
+[Install]
+WantedBy=multi-user.target
