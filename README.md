@@ -1,5 +1,6 @@
 AirGradient Prometheus Exporter
 ===============================
+This project is not affiliated with [AirGradient Co Ltd.](https://www.airgradient.com), I am just a fan and user of their products.
 
 Receive data from AirGradient sensors and expose it as Prometheus metrics.
 
@@ -21,9 +22,12 @@ The following steps will guide you through the process of preparing your compute
 7. The device should now be configured send data to the exporter
 
 # Running the Exporter
+The exporter will also serve configuration data back to the device. This cannot currently be disabled but will be in the future.
+
+The relevant device configuration options are included as well.
 
 ## Linux
-1. [Download the latest release]()
+1. [Download the latest release for your platform](bin/)
 2. If on Debian, copy dist/debian/airgradient-exporter.service to /etc/systemd/system/airgradient-exporter.service
 3. Run `sudo systemctl enable airgradient-exporter.service`
 4. Copy the relevant binary to the system (/bin/airgradient-exporter)
@@ -31,6 +35,8 @@ The following steps will guide you through the process of preparing your compute
 6. Check the metrics endpoint by opening a web browser and going to `http://YOUR_IP:YOUR_PORT/metrics`
 
 # Exporter Configuration
+The exporter can be configured using command line flags or environment variables. The following table lists the available configuration options.
+
 | Name                      | Description                                                                                                                   | Default  | Options                                | CLI Flag                         | Environment Variable                                |
 |---------------------------|-------------------------------------------------------------------------------------------------------------------------------|----------|----------------------------------------|----------------------------------|-----------------------------------------------------|
 | Address                   | The address the exporter will listen on                                                                                       | 0.0.0.0  | * or a valid IP                        | `--address`                      | `AIRGRADIENT_EXPORTER_ADDRESS`                      |
